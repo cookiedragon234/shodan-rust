@@ -25,7 +25,7 @@ pub mod shodan {
     const BASE_URL: &'static str = "https://api.shodan.io";
 
     pub struct ShodanClient {
-		api_key: &'static str,
+		api_key: String,
     }
 
     impl ShodanClient {
@@ -68,8 +68,8 @@ pub mod shodan {
 		}
 
 		/// Creates a new ShodanClient.
-		pub fn new(api_key: &'static str) -> ShodanClient {
-			ShodanClient { api_key: api_key }
+		pub fn new(api_key: String) -> ShodanClient {
+			ShodanClient { api_key }
 		}
 
 		/// Method for `/shodan/host/{ip}`
